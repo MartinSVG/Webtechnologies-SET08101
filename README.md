@@ -2,7 +2,7 @@ This initiative focuses on crafting a vibrant and user-friendly Fun Quiz Website
 
 how to run locally (just open index.html),
 
-(https://<username>.github.io/triviaquest/)
+https://github.com/MartinSVG/Webtechnologies-SET08101.git
 
 Martin Sheen 
 Student ID: 40647491
