@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Quiz Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <h1>Fun Quiz Website</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#quiz">Play Quiz</a></li>
+      <li><a href="#scores">My Scores</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome!</h2>
+    <p>Test your knowledge in different quiz categories. Click below to start playing!</p>
+    <button onclick="showSection('quiz')">Start Quiz</button>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quiz" class="hidden">
+    <h2>Select a Category</h2>
+    <button onclick="startQuiz('movies')">Movies</button>
+    <button onclick="startQuiz('science')">Science</button>
+    <button onclick="startQuiz('music')">Music</button>
+    <button onclick="startQuiz('random')">Random</button>
+
+    <div id="quiz-container" class="hidden">
+      <p id="question"></p>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+  </section>
+
+  <!-- Scores Section -->
+  <section id="scores" class="hidden">
+    <h2>My Scores</h2>
+    <ul id="score-list"></ul>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="hidden">
+    <h2>About This Site</h2>
+    <p>This quiz site was built with HTML, CSS, and JavaScript. It’s a fun way to test your knowledge while I practice my web development skills!</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
