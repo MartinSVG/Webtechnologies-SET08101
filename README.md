@@ -1,8 +1,8 @@
-This initiative focuses on crafting a vibrant and user-friendly Fun Quiz Website that delivers an engaging and visually appealing experience. The platform will feature a variety of quiz categories—including Movies, Science, Music, and Random topics—designed to entertain and challenge users. It will include score tracking and may incorporate a leaderboard to spark friendly competition. The core objective is to build a straightforward yet delightful site that showcases thoughtful user experience design and well-organized development planning.
+# TriviaQuest — Clean Bundle
 
-how to run locally (just open index.html),
+Pure HTML/CSS/JS quiz. Deployable on GitHub Pages.
 
-https://github.com/MartinSVG/Webtechnologies-SET08101.git
-
-Martin Sheen 
-Student ID: 40647491
+## Deploy
+1. Create a GitHub repo and upload all files to the repo root.
+2. Settings → Pages → Deploy from a branch → Branch: main (root) → Save.
+3. Open: https://<username>.github.io/<repo-name>/

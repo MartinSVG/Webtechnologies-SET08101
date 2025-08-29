@@ -1,57 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fun Quiz Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TriviaQuest — Clean</title>
+  <meta name="description" content="A simple quiz built with vanilla HTML, CSS, and JavaScript." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <h1>Fun Quiz Website</h1>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#quiz">Play Quiz</a></li>
-      <li><a href="#scores">My Scores</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <h1>TriviaQuest</h1>
+    <nav aria-label="Primary">
+      <button class="nav" data-route="home" aria-current="page">Home</button>
+      <button class="nav" data-route="scores">My Scores</button>
+      <button class="nav" data-route="about">About</button>
+    </nav>
+  </header>
 
-  <!-- Home Section -->
-  <section id="home">
-    <h2>Welcome!</h2>
-    <p>Test your knowledge in different quiz categories. Click below to start playing!</p>
-    <button onclick="showSection('quiz')">Start Quiz</button>
-  </section>
+  <main id="app" tabindex="-1">
+    <!-- Home -->
+    <section id="view-home" class="view active">
+      <h2>Play Quiz</h2>
+      <p class="lead">Pick a category to start. Ten questions per round.</p>
+      <div class="grid">
+        <button class="card" data-start="movies">🎬 Movies</button>
+        <button class="card" data-start="science">🧪 Science</button>
+        <button class="card" data-start="music">🎵 Music</button>
+        <button class="card" data-start="random">🎲 Random</button>
+      </div>
+    </section>
 
-  <!-- Quiz Section -->
-  <section id="quiz" class="hidden">
-    <h2>Select a Category</h2>
-    <button onclick="startQuiz('movies')">Movies</button>
-    <button onclick="startQuiz('science')">Science</button>
-    <button onclick="startQuiz('music')">Music</button>
-    <button onclick="startQuiz('random')">Random</button>
+    <!-- Quiz -->
+    <section id="view-quiz" class="view">
+      <div class="quiz-head">
+        <h2>Quiz</h2>
+        <div class="progress"><div id="bar" class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"></div></div>
+      </div>
+      <p id="q" class="question" aria-live="polite"></p>
+      <ul id="ans" class="answers" role="list"></ul>
+      <div class="quiz-foot"><button id="next" class="btn" disabled>Next</button></div>
+    </section>
 
-    <div id="quiz-container" class="hidden">
-      <p id="question"></p>
-      <div id="options"></div>
-      <button onclick="nextQuestion()">Next</button>
-    </div>
-  </section>
+    <!-- Results -->
+    <section id="view-results" class="view">
+      <h2>Results</h2>
+      <p id="scoreline" class="score"></p>
+      <div class="row">
+        <button id="again" class="btn">Play Again</button>
+        <button id="share" class="btn btn-outline">Share</button>
+      </div>
+    </section>
 
-  <!-- Scores Section -->
-  <section id="scores" class="hidden">
-    <h2>My Scores</h2>
-    <ul id="score-list"></ul>
-  </section>
+    <!-- Scores -->
+    <section id="view-scores" class="view">
+      <h2>My Scores</h2>
+      <div id="scores" class="scores"></div>
+      <button id="clear" class="btn btn-outline">Clear Saved Scores</button>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="hidden">
-    <h2>About This Site</h2>
-    <p>This quiz site was built with HTML, CSS, and JavaScript. It’s a fun way to test your knowledge while I practice my web development skills!</p>
-  </section>
+    <!-- About -->
+    <section id="view-about" class="view">
+      <h2>About</h2>
+      <p>Built with <strong>vanilla HTML/CSS/JS</strong>. Scores are stored locally via <code>localStorage</code>. Deployed on GitHub Pages.</p>
+    </section>
+  </main>
 
-  <script src="script.js"></script>
+  <footer class="site-footer"><small>© 2025 TriviaQuest • Clean bundle</small></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
